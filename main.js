@@ -10,6 +10,7 @@ function createQRcode() {
         imgbox.classList.add("show-img");
         imgbox.style.maxHeight = "300px";
         getImageButton.classList.remove("cantAccess")
+        downloadLink.setAttribute('download', '');
         getImageButton.disabled = false;
         downloadLink.href = qrimage.src;
     } else {
@@ -18,6 +19,7 @@ function createQRcode() {
             inputtext.classList.remove('error');
         }, 1000);
         getImageButton.classList.add("cantAccess")
+        downloadLink.removeAttribute('download');
         getImageButton.disabled = true;
         imgbox.style.maxHeight = "0";
     }
